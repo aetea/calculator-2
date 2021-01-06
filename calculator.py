@@ -7,7 +7,7 @@ from arithmetic import (add, subtract, multiply, divide, square, cube,
 # repeat forever:
 while True:
     # read input
-    print("Please enter an operator and two numbers")
+    print("Please enter an operator and two numbers (or type 'q' to quit)")
     user_input = input("> ")
 
     # check if user asked to quit
@@ -19,12 +19,21 @@ while True:
 
     # tokenise input
     operator, num1, num2 = user_input.split(" ") 
-    num1 = int(num1)
-    num2 = int(num2)
+    num1 = float(num1)
+    num2 = float(num2)
 
     # run various operators
-    if operator == "add": 
+    if operator == "+": 
         print (add(num1, num2))
+
+    elif operator == "-":
+        print (subtract(num1, num2))
+
+    elif operator == "*":
+        print (multiply(num1, num2)) 
+
+    elif operator == "/":
+        print (divide(num1, num2))
 
 #         else:
 #             (decide which math function to call based on first token)
